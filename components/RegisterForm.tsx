@@ -9,6 +9,7 @@ const RegisterForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const router = useRouter();
 
   // console.log(name);
   // console.log(email);
@@ -46,7 +47,8 @@ const RegisterForm = () => {
 
       if (res.ok) {
         const form = e.target as HTMLFormElement;
-        form.reset()
+        form.reset();
+        router.push('/');
       } else {
         console.log('User registration failed.')
       }
@@ -73,7 +75,7 @@ const RegisterForm = () => {
             type='password'
             placeholder='Password'
             onChange={e => setPassword(e.target.value)}></input>
-          <button className='bg-green-400 hover:bg-green-500 text-white font-medium px-6 py-2 cursor-pointer'>LogIn</button>
+          <button className='bg-green-400 hover:bg-green-500 text-white font-medium px-6 py-2 cursor-pointer'>Register</button>
           {error && (
             <div className='bg-red-500 text-white font-medium px-6 py-2 text-center'>{error}</div>
           )}
