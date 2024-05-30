@@ -60,7 +60,7 @@ const RegisterForm = () => {
 
   return (
     <div className='grid place-items-center h-screen'>
-      <div className='shadow-lg p-5 rounded-lg'>
+      <div className='shadow-lg p-5 rounded-lg border-t-4 border-r-4 border-green-400'>
         <h1 className='text-xl my-3'>Register</h1>
         <form onSubmit={submitHandler} className='flex flex-col gap-3'>
           <input
